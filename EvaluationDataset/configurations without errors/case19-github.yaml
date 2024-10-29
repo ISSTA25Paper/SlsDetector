@@ -7,10 +7,10 @@ Transform:
       apiKey: "xxxxxxx"
       nodeLayerVersion: 88 
       extensionLayerVersion: 41
-      service: "XXXX API" # Optional
-      env: !Ref Env # Optional
-      tags: "App:Xxxxx,Stack:XXXX" # Optional
-      # For additional parameters, see the Configuration section
+      service: "XXXX API" 
+      env: !Ref Env 
+      tags: "App:Xxxxx,Stack:XXXX" 
+      
 
 Description: Template for deploying API Gateway backed by lambda
 

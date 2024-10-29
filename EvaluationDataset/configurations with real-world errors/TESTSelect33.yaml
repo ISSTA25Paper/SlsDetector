@@ -2,7 +2,7 @@ Transform: AWS::Serverless-2016-10-31
 Parameters:
   IsListening:
     AllowedValues: ["true", "false"]
-    Default: true
+    Default: 'true'
     Type: String
 
 Conditions:

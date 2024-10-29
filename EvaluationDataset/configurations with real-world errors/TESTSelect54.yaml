@@ -3,23 +3,6 @@ Transform: AWS::Serverless-2016-10-31
 
 
 Resources:
-  # Account:
-    # Type: 'AWS::ApiGateway::Model'
-    # Properties:
-    #   RestApiId: !Ref ServerlessRestApi
-    #   ContentType: application/json
-    #   Name: Account
-    #   Schema:
-    #     $schema: 'http://json-schema.org/draft-04/schema#'
-    #     title: Account
-    #     type: array
-    #     items:
-    #       type: object
-    #       properties:
-    #         name:
-    #           type: string
-    #         status:
-    #           type: string
   CreateAccountFunction:
     Type: AWS::Serverless::Function
     Properties:

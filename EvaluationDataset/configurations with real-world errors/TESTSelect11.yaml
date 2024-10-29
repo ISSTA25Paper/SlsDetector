@@ -29,9 +29,6 @@ Resources:
     Type: AWS::ApiGateway::UsagePlan
     DependsOn: ServerlessServicetestStage
     Properties:
-      # ApiStages:
-      #   - ApiId: !Ref ServerlessService
-      #     Stage: test
       Description: Default Serverless-Service Usage Plan
       Quota:
         Limit: 5000

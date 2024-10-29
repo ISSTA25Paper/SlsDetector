@@ -7,7 +7,6 @@ Resources:
   OnePolicyTemplate:
     Type: AWS::Serverless::Function
     Properties:
-      # InlineCode: bar
       Handler: hello.handler
       Runtime: python3.9
       Policies: "SESBulkTemplatedCrudPolicy_v2"

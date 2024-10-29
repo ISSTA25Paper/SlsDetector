@@ -58,7 +58,7 @@ Resources:
     Properties:
       CodeUri: functions/stock-seller/
       Handler: app.lambdaHandler
-      Runtime: nodejs14.x
+      Runtime: nodejs16.x
       Architectures:
         - x86_64
 
@@ -67,7 +67,7 @@ Resources:
     Properties:
       CodeUri: functions/stock-buyer/
       Handler: app.lambdaHandler
-      Runtime: nodejs14.x
+      Runtime: nodejs18.x
       Architectures:
         - x86_64
 

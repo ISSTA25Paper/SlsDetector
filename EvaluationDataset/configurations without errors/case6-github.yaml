@@ -5,11 +5,9 @@ Resources:
   MyFunction:
     Type: AWS::Serverless::Function
     Properties:
-      # InlineCode: bar
       InlineCode: |
         def handler(event, context):
             return {'foo': 'bar'}
-      # Handler: bar
       Handler: index.handler
       Runtime: python3.9
       Events:

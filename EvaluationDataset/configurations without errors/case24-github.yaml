@@ -16,7 +16,6 @@ Resources:
     Properties:
       Runtime: nodejs16.x
       Handler: index.handler
-      InlineCode: console.log("hi!")
       Events:
         ApiEvent:
           Type: Api

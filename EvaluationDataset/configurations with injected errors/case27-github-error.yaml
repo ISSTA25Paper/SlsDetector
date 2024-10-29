@@ -51,14 +51,14 @@ Resources:
         - !Ref UtilsLayer
         - !Ref RequirementsLayer
 
-  Outputs:
-    UtilsLayerArn:
-      Description: "Common utils function Layer"
-      Value: !Ref UtilsLayer
-      Export:
-        Name: !Sub '${AWS::StackName}-UtilsLayerArn'
-    RequirementsLayerArn:
-      Description: "Layer containing libraries"
-      Value: !Ref RequirementsLayer
-      Export:
-        Name: !Sub '${AWS::StackName}-RequirementsLayerArn'
+Outputs:
+  UtilsLayerArn:
+    Description: "Common utils function Layer"
+    Value: !Ref UtilsLayer
+    Export:
+      Name: !Sub '${AWS::StackName}-UtilsLayerArn'
+  RequirementsLayerArn:
+    Description: "Layer containing libraries"
+    Value: !Ref RequirementsLayer
+    Export:
+      Name: !Sub '${AWS::StackName}-RequirementsLayerArn'

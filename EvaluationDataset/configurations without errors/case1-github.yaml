@@ -21,7 +21,6 @@ Parameters:
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
-    # Runtime: nodejs10.x
     Runtime: nodejs18.x
     AutoPublishAlias: !Ref StageName
     DeploymentPreference:
@@ -49,9 +48,7 @@ Globals:
 Conditions:   
   NotStaging: !Not [!Equals [ !Ref StageName, staging ]]
   IsLocal: !Equals [ !Ref StageName, local ]
-  #If resources are in a seperate file with naming convention [stage]--[repo]--[branch]--[eyecatcher]--r 
-  #the following line would exist in said resources file
-  #NotStaging: !Not [!Equals [ !Select [ "0", !Split [ '--', !Ref 'AWS::StackName' ] ], staging ]]
+  
 
 Resources:
   APIG:
@@ -112,7 +109,6 @@ Resources:
     Properties:
       FunctionName: !Sub "${AWS::StackName}--Monolithic"
       Handler: dist/apig-lambda.handler
-      # CodeUri is replaced in buildspec.yml during codebuild, to limit zip size
       CodeUri: ./
       Description: !Sub "${StageName}: NestJS API"
       Tags: 

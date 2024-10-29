@@ -14,7 +14,7 @@ Resources:
         paths:
           /my-resource:
             get:
-              responses:  # <----- define this
+              responses:  
                 '200':
                   description: Successful response
                   content:
@@ -35,8 +35,8 @@ Resources:
                         properties:
                           error:
                             type: string
-              x-amazon-apigateway-integration:  # <----- define this
-                type: aws_proxy  # This can be a different integration type based on your use case
+              x-amazon-apigateway-integration:  
+                type: aws_proxy  
                 httpMethod: POST
                 uri: !Sub
                   - arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${FunctionArn}/invocations
@@ -52,4 +52,4 @@ Resources:
           Type: Api
           Properties:
             Path: /newlocation
-            Method: GET  # Specify the correct HTTP method here
+            Method: GET  

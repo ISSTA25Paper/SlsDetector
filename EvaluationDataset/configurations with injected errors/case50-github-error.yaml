@@ -4,8 +4,6 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Prod
-      # Auth:
-      #   ApiKeyRequired: true
   MyFunction:
     Type: AWS::Serverless::Function
     Properties:

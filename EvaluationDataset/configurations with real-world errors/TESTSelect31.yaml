@@ -15,7 +15,6 @@ Globals:
 Resources:
   EAPCompanyCRUDFunction:
     Type: AWS::Serverless::Function
-    # FunctionName: "eap-company-crud"
     Role: "arn:aws:iam::596343339730:role/LambdaS3ReadDynamoDBFull"
     Properties:
       CodeUri: eap-company-crud/

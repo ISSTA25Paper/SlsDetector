@@ -7,18 +7,6 @@ Globals:
     Timeout: 3
 
 Resources:
-##########################################################################
-#  API Gateway HTTP API                                                  #
-##########################################################################
-  # ExampleHttpApi:
-  #   Type: 'AWS::ApiGatewayV2::Api'
-  #   Properties:
-  #     Name: Monologue
-  #     Description: Primary API Gateway to Example
-  #     ProtocolType: HTTP
-##########################################################################
-#   Lambda Functions                                                     #
-##########################################################################
   WebUIFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -79,8 +67,3 @@ Outputs:
   ExampleFunction:
     Description: "Hello World Lambda Function ARN"
     Value: !GetAtt ExampleFunction.Arn
-  # DistributionDomainName:
-  #   Description: "Distribution domain name"
-  #   Value: !GetAtt CloudfrontDistribution.DomainName
-  #   Export:
-  #     Name: DistributionDomainName

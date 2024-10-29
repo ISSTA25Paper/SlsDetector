@@ -8,9 +8,6 @@ Resources:
       DefinitionUri: swagger.yml
       StageName: Prod
       Variables:
-        # NOTE: Before using this template, replace the <<region>> and <<account>> fields
-        #       in Lambda integration URI in the swagger file to region and accountId
-        #       you are deploying to
         LambdaFunctionName: !Ref ServiceStatusFunction
 
   ServiceStatusFunction:
@@ -26,9 +23,7 @@ Resources:
             RestApiId: !Ref ServiceStatusFunctionApi
             Path: /service/status
             Method: GET
-      #       
-      # Create Card Api
-      #
+      
     CreateMemberShipCardFunctionApi:
       Type: AWS::Serverless::Api
       Properties:
@@ -36,9 +31,7 @@ Resources:
         StageName: Prod
         Variables:
           LambdaFunctionName: !Ref CreateMemberShipCardFunction
-      #
-      # Create Card Lambda Function
-      #
+      
     CreateMemberShipCardFunction:
       Type: AWS::Serverless::Function
       Properties:

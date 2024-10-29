@@ -9,7 +9,6 @@ Resources:
       Cors: "'www.example.com'"
 
       DefinitionBody:
-        #swagger: 2.0
         openapi: 3.0.1
         info:
           version: 0.0.1

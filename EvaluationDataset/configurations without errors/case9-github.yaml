@@ -18,8 +18,6 @@ Resources:
           DataTraceEnabled: true
           ResourcePath: "/*"
           HttpMethod: "*"
-          # Set CachingEnabled false as default for all resources. To enable caching for a resource configure
-          # a MethodSettings entry with CachingEnabled: true, HttpMethod: GET, CacheTtlInSeconds: 3600, and appropriate ResourcePath,
           CachingEnabled: false
       DefinitionBody:
         openapi: 3.0.0
@@ -83,7 +81,6 @@ Resources:
           return response;
         };
       Handler: index.handler
-      # Runtime: nodejs12.x
       Runtime: nodejs18.x
       MemorySize: 128
 

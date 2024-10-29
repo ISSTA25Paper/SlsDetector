@@ -28,7 +28,6 @@ Resources:
     DeletionPolicy: Delete
     Type: AWS::Logs::LogGroup
     Properties:
-      # LogGroupName: !Sub '/aws/lambda/${LambdaFunction}'
       LogGroupName: !Sub '/aws/lambda/${Namespace}-${ProjectName}'
       RetentionInDays: !Ref CWLogsRetention
 

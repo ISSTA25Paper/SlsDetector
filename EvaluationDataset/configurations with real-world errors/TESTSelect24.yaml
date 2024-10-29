@@ -15,19 +15,19 @@ Resources:
       Handler: index.handler
       Runtime: nodejs18.x
       InlineCode: |
-        import json
-        def handler(event, context):
+        exports.handler = async (event, context) => {
           return {
-            "statusCode": 200,
-            "body": json.dumps({
-                "message": "hello world",
+            statusCode: 200,
+            body: JSON.stringify({
+              message: "hello world",
             }),
-          }
+          };
+        };
       Events:
         Trigger:
           Type: EventBridgeRule
           Properties:
-            Name: !Sub "${AWS::StackName}-my-rule" # should RuleName
+            Name: !Sub "${AWS::StackName}-my-rule"
             EventBusName: !Ref MyEventBus
             Pattern:
               detail-type: ["FooBar"]

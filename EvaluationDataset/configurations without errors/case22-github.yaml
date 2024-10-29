@@ -8,9 +8,6 @@ Parameters:
     Default: prod
     Type: String
 
-# Conditions:
-#   conditionIsProd: !Equals [!Ref conditionIsProdVar, prod]
-
 Resources:
   Certificate:
     Type: 'AWS::CertificateManager::Certificate'
@@ -34,10 +31,7 @@ Resources:
       - AttributeName: Id
         KeyType: HASH
       DeletionPolicy: Retain
-    # DeletionPolicy: !If
-    #   - conditionIsProd
-    #   - Retain
-    #   - Delete
+
 
   MyFunction:
     Type: AWS::Serverless::Function
@@ -51,7 +45,7 @@ Resources:
           return response;
         };
       Handler: index.handler
-      Runtime: nodejs14.x
+      Runtime: nodejs16.x
       Events:
         Fetch:
           Type: Api

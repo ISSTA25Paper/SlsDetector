@@ -22,18 +22,7 @@ Resources:
           Type: SNS
           Properties:
             Topic: arn:aws:sns:us-east-1:153975004783:redox-events-production
-      # DeadLetterQueue:
-      #   TargetArn:
-      #     Fn::GetAtt:
-      #     - ScheduleBuilderDLQ
-      #     - Arn
-      #   Type: SQS
-    # Parameters:
-    #   GithubToken:
-    #     Type: String
     Metadata:
-      # DockerBuildArgs:
-      #   GITHUB_TOKEN: GithubToken
       DockerContext: /.
       DockerTag: testupdateschedule-9957142c3297-latest
       Dockerfile: Dockerfile

@@ -84,24 +84,6 @@ Mappings:
       Suffix: ""
 
 Resources:
-#  TestAccessPolicy:
-#    Type: 'AWS::OpenSearchServerless::AccessPolicy'
-#    Properties:
-#      Name: data-access-policy
-#      Type: data
-#      Policy: !Sub >-
-#        [
-#          {
-#            "Rules":[
-#              {"ResourceType":"index","Resource":["index/*/*"],"Permission":["aoss:*"]},
-#              {"ResourceType":"collection","Resource":["collection/my-collection"],"Permission":["aoss:*"]}
-#            ],
-#            "Principal":[
-#              "arn:aws:iam::${AWS::AccountId}:role/${UpdateAwsBatchJobsOpensearchFunctionRole}",
-#              "arn:aws:iam::${AWS::AccountId}:role/${ListJobsAndLogsFunctionRole}"
-#            ]
-#          }
-#        ]
 
   UpdateAwsBatchJobsOpensearchFunction:
     Type: AWS::Serverless::Function
@@ -194,7 +176,6 @@ Resources:
         - VPCAccessPolicy: { }
         - S3CrudPolicy:
             BucketName: !Ref BaseBucketName
-        # - AWSLambdaVPCAccessExecutionRole
         - Version: '2012-10-17'
           Statement:
             - Effect: Allow
@@ -216,13 +197,6 @@ Resources:
             Method: delete
             RestApiId:
               Ref: MyRestApi
-#        OptionsEvent:
-#          Type: Api
-#          Properties:
-#            Path: /datasets/{datasetid}/
-#            Method: options
-#            RestApiId:
-#              Ref: MyRestApi
         PostDataSetEvent:
           Type: Api
           Properties:
@@ -341,7 +315,6 @@ Resources:
         - VPCAccessPolicy: { }
         - S3CrudPolicy:
             BucketName: !Ref BaseBucketName
-        # - AWSLambdaVPCAccessExecutionRole
       Events:
         GetDataEvent:
           Type: Api

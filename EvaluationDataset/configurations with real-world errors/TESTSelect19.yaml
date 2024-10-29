@@ -157,8 +157,6 @@ Resources:
         Variables:
           ENVIRONMENT: !Ref EnvType
       Timeout: 300
-      # Layers: 
-      #   - !FindInMap [LayerVersions, !FindInMap [AccountRegion, !Ref "AWS::Region", !Ref "AWS::AccountId"], SavGeneralIncludes]
       VpcConfig:
         SecurityGroupIds:
           - !ImportValue vpc-sg

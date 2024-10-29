@@ -23,8 +23,7 @@ Resources:
         EndpointConfiguration: REGIONAL
         Route53:
           HostedZoneId: "abc123456"
-      # EndpointConfiguration:
-      #   Type: REGIONAL
+
 
             
   ApiGatewayAdminTwo:
@@ -43,8 +42,7 @@ Resources:
         EndpointConfiguration: REGIONAL
         Route53:
           HostedZoneId: "abc123456"
-      # EndpointConfiguration:
-      #   Type: REGIONAL
+
         
             
   ApiGatewayAdminThree:
@@ -63,5 +61,3 @@ Resources:
         EndpointConfiguration: REGIONAL
         Route53:
           HostedZoneId: "abc123456"
-      # EndpointConfiguration:
-      #   Type: REGIONAL

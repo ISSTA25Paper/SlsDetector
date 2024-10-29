@@ -10,7 +10,6 @@ Resources:
         GetRequest:
           Type: HttpApi
           Properties:
-            # ApiId: !Ref ApiGateway
             Path: /mypath/{storeId}
             Method: GET
             PayloadFormatVersion: 2

@@ -21,8 +21,6 @@ Resources:
 
   TestUsagePlan:
     Type: AWS::ApiGateway::UsagePlan
-    # DependsOn: 
-    #   - ApiGatewayStage
     Properties:
       ApiStages:
         - ApiId: !Ref ApiGateway

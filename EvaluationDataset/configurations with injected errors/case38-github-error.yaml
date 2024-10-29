@@ -30,16 +30,12 @@ Resources:
         AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
         AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key, Access-Control-Allow-Origin'"
         AllowOrigin: "'*'"
-        #AllowCredentials: true
       Auth:
-        # AddDefaultAuthorizerToCorsPreflight: False
-        # DefaultAuthorizer: CustomLambdaTokenAuthorizer
         Authorizers:
           CustomLambdaTokenAuthorizer:
             FunctionArn: !GetAtt ValidateTokenFunction.Arn
             Identity:
               Header: Authorization
-              #ValidationExpression: Bearer.*
   GetUserFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -49,7 +45,7 @@ Resources:
       Policies: AmazonDynamoDBFullAccess
       Environment:
         Variables:
-          USERS_TABLE_NAME: !Ref UsersTable
+          USERS_TABLE_NAME: "UsersTable"
       Events:
         GetUserPath:
           Type: Api
@@ -68,7 +64,7 @@ Resources:
       Policies: AmazonDynamoDBFullAccess
       Environment:
         Variables:
-          USERS_TABLE_NAME: !Ref UsersTable
+          USERS_TABLE_NAME: "UsersTable"
       Events:
         PutRoot:
           Type: Api
@@ -86,10 +82,4 @@ Resources:
       Runtime: nodejs10.x
       Policies: 
         - AmazonDynamoDBFullAccess
-        - SecretsManagerReadWrite 
-      # Environment:
-      #   Variables:
-      #     ACCESS_TOKEN_TTL: !Ref AccessTokenTTL
-      #     REFRESH_TOKEN_TTL: !Ref RefreshTokenTTL
-      #     SECRET: !Ref AuthSecret
-      #     TOKEN_TABLE_NAME: !Ref AuthorizationTokenTable
+        - SecretsManagerReadWrite

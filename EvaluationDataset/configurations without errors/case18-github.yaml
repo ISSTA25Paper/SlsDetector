@@ -43,11 +43,9 @@ Resources:
                   - "lambda:AddLayerVersionPermission"
                   - "lambda:PublishLayerVersion"
                   - "lambda:GetLayerVersion"
-                  - "lambda:PublishLayerVersion"
                   - "lambda:DeleteLayerVersion"
                   - "lambda:ListLayerVersions"
                   - "lambda:ListLayers"
-                  - "lambda:AddLayerVersionPermission"
                   - "lambda:RemoveLayerVersionPermission"
                 Resource: "*"
               - Effect: "Allow"
@@ -90,11 +88,11 @@ Resources:
         Type: NO_CACHE
       Triggers:
         FilterGroups:
-          - - Type: EVENT
-              Pattern: PUSH
-              ExcludeMatchedPattern: false
-            - Type: HEAD_REF
-              Pattern: "^refs/tags/.*"
-              ExcludeMatchedPattern: false
+          - Type: EVENT
+            Pattern: PUSH
+            ExcludeMatchedPattern: false
+          - Type: HEAD_REF
+            Pattern: "^refs/tags/.*"
+            ExcludeMatchedPattern: false
         Webhook: true
       EncryptionKey: !Sub arn:aws:kms:${AWS::Region}:${AWS::AccountId}:alias/aws/s3
