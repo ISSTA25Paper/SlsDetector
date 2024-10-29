@@ -1,6 +1,6 @@
 # SlsDetector: LLM-Based Misconfiguration Detection for AWS Serverless Computing
 
-We provide code of our framework SlsDetector, evaluation baselines, and evaluation dataset.
+We provide code of our framework SlsDetector, evaluation baselines, evaluation dataset, and evaluation results.
 
 
 ## Code of SlsDetector
@@ -25,7 +25,7 @@ Baseline 2: basic LLM-based approach.
 
 ## Evaluation Dataset
 
-We construct this evalution dataset including configuration files without errors, configuration files with real-world errors, and configuration files with injected errors.
+We construct this evalution dataset (in the directory "EvaluationDateset") including configuration files without errors, configuration files with real-world errors, and configuration files with injected errors.
 
 - The directory "configurations without errors" contains 52 correct configuration files, where 26 (naming from case 1 to case 26) are used to evaluate error-free configurations, while the remaining 26  (naming from case 27 to case 52) are reserved for generating configurations with injected errors.
     - The detailed information of these configuration files are described in the file "correct configurations.xlsx".
@@ -35,3 +35,13 @@ We construct this evalution dataset including configuration files without errors
     - The specific injected changes are provided in the file "injected configurations.xlsx".
 
 The information of all configuration files with their ground-truth answers is summarized in the file "EvaluationConfigurationSummarization.xlsx".
+
+
+
+## Evaluation Results
+
+We provide the evaluation results about RQ1, RQ2, and RQ3 in the directory "EvaluationResults"
+
+- In the directory "RQ1", the response information and metric results of DD methods are provided when using different thresholds (1%, 3%, 5%, and 10%).
+- In the directory "RQ2+RQ3", the response information and metric results of SlsDetector and BL methods (an simple LLM-based method) are provided, including results of different LLMs (ChatGPT-4o, Llama 3.1 (405B) Instruct Turbo, and Gemini 1.5 Pro) when repeated 5 times.
+
