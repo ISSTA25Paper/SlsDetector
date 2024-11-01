@@ -43,5 +43,5 @@ The information of all configuration files with their ground-truth answers is su
 We provide the evaluation results about RQ1, RQ2, and RQ3 in the directory "EvaluationResults"
 
 - In the directory "RQ1", the response information and metric results of DD methods are provided when using different thresholds (1%, 3%, 5%, and 10%).
-- In the directory "RQ2+RQ3", the response information and metric results of SlsDetector and BL methods (an simple LLM-based method) are provided, including results of different LLMs (ChatGPT-4o, Llama 3.1 (405B) Instruct Turbo, and Gemini 1.5 Pro) when repeated 5 times.
+- In the directory "RQ2+RQ3+RQ4", the response information and metric results of SlsDetector and BL methods (an simple LLM-based method) are provided, including results of different LLMs (ChatGPT-4o, Llama 3.1 (405B) Instruct Turbo, and Gemini 1.5 Pro) when repeated 5 times.
 
