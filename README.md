@@ -1,4 +1,4 @@
-# SlsDetector: LLM-Based Misconfiguration Detection for AWS Serverless Computing
+# LLM-Based Misconfiguration Detection for AWS Serverless Computing
 
 We provide code of our framework SlsDetector, evaluation baselines, evaluation dataset, and evaluation results.
 
